@@ -21,6 +21,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 * {
   @apply font-poppins;
 }
