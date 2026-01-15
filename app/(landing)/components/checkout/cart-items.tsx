@@ -1,12 +1,20 @@
+'use client';
+
 import Image from "next/image";
 import { cartList } from "../ui/cart-popup";
 import Button from "../ui/button";
 import priceFormatter from "@/app/utils/price-formatter";
-import { FiArrowRight, FiTrash2 } from "react-icons/fi";
+import { FiArrowRight, FiCreditCard, FiTrash2 } from "react-icons/fi";
+import { useRouter } from "next/navigation";
 
 const CartItems = () => {
-     const totalPrice = cartList.reduce((total,item) => total + item.price * item.qty , 0)
+    const {push} = useRouter();
+    const totalPrice = cartList.reduce((total,item) => total + item.price * item.qty , 0)
      
+    const payment = () => {
+
+    };
+
     return (
          <div className="bg-white h-fit">
             <div className="px-5 py-4 border-b border-gray-200">
@@ -48,8 +56,8 @@ const CartItems = () => {
                         {priceFormatter(totalPrice)}
                     </div>
                 </div>
-                <Button variant="dark" size="small" className="w-full">
-                    Checkout Now <FiArrowRight size={16} />
+                <Button variant="dark" size="small" className="w-full" onClick={() => push("/payment")}>
+                    <FiCreditCard size={16}/> Proceed to Payment
                 </Button>
             </div>
         </div>
