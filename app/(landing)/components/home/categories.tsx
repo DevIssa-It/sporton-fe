@@ -1,34 +1,16 @@
 import { FiArrowRight } from "react-icons/fi";
 import Link from "next/link";
 import Image from "next/image";
+import { Category } from "@/app/types";
+import { getImageUrl } from "@/app/lib/api";
 
-const categoryList = [
-    {
-        name: "Running",
-        imgUrl: "category-running.svg",
-    },
-    {
-        name: "Tennis",
-        imgUrl: "category-tennis.svg",
-    },
-    {
-        name: "Basketball",
-        imgUrl: "category-basketball.svg",
-    },
-    {
-        name: "Football",
-        imgUrl: "category-football.svg",
-    },
-    {
-        name: "Badminton",
-        imgUrl: "category-badminton.svg",
-    },
-    {
-        name: "Swimming",
-        imgUrl: "category-swimming.svg",
-    }
-];
-const CategoriesSection = () => {
+
+
+type TCategoriesProps = {
+    categories: Category[];
+}
+
+const CategoriesSection = ({categories}: TCategoriesProps) => {
     return (
         <section id="categories" className="relative container mx-auto px-20 mt-32 pb-20">
             <div className="flex justify-between items-center w-full">
@@ -38,13 +20,13 @@ const CategoriesSection = () => {
                     <FiArrowRight className="self-center "/>
                 </Link>
             </div>
-            <div className="grid grid-cols-6 gap-12 mt-8">
+            <div className="grid grid-cols-6 gap-10 mt-8">
                 {
-                    categoryList.map((category, index) => (
-                        <div className="rounded-lg bg-gradient-to-r from-[#F1F1F1] to-[#F7F7F7D1] w-full aspect-square flex justify-center" key={index}>
+                    categories.map((category) => (
+                        <div className="rounded-lg bg-gradient-to-r from-[#F1F1F1] to-[#F7F7F7D1] w-full aspect-square flex justify-center" key={category._id}>
                             <div className="self-center">
                                 <Image 
-                                    src={`/image/categories/${category.imgUrl}`} 
+                                    src={getImageUrl(category.imageUrl)} 
                                     width={86} 
                                     height={86} 
                                     alt={category.name}
