@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const HeroSection = () => {
     return (
-        <section id="hero-section" className="relative container mx-auto h-[90vh] flex px-10">
+        <section id="hero-section" className="relative container mx-auto h-[90vh] flex px-10 pt-40">
             <div className="relative self-center">
                 <Image 
                     src="/image/img-basketball.svg"
@@ -43,7 +43,7 @@ const HeroSection = () => {
                 alt="ornament" 
                 width={320} 
                 height={320}
-                className="absolute -right-50 top-1/3 -translate-y-1/2"
+                className="absolute -right-50 top-1/3 -translate-y-1/3"
             />
         </section>
     );
