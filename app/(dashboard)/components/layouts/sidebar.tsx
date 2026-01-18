@@ -35,7 +35,7 @@ const Sidebar = () => {
             <div className="py-8 px-12 border-b border-gray-200">
                 <Image src="/image/logo-admin.svg" alt="SportOn Admin Logo" width={215} height={36} />
             </div>
-            <div className="flex flex-col gap-2 mt-8 p-5">
+            <div className="flex flex-col gap-2 mt-4 p-4">
                 {
                     menuItems.map((item, index) => {
                     const isActive = item.link === pathName;
