@@ -2,9 +2,9 @@
 
 import Button from "@/app/(landing)/components/ui/button";
 import { FiPlus } from "react-icons/fi";
-import ProductTable from "../../components/products/product-table";
 import { useState } from "react";
-import ProductModal from "../../components/products/product-modal";
+import CategoryTable from "../../components/categories/category-table";
+import CategoryModal from "../../components/categories/category-modal";
 
 const CategoryManagement = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -25,8 +25,8 @@ const CategoryManagement = () => {
                 </div>
                 <Button size="small" className="rounded-lg" onClick={() => setIsOpen(true)} ><FiPlus size={20} /> Add Category</Button>
             </div>
-            <ProductTable />
-            <ProductModal isOpen={isOpen} onClose={handleCloseModal} />
+            <CategoryTable />
+            <CategoryModal isOpen={isOpen} onClose={handleCloseModal} />
         </div>
     )
 }

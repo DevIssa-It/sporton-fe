@@ -20,7 +20,7 @@ const ProductModal = ({isOpen, onClose}: TProductModalProps) => {
             <div className="flex flex-col gap-4">
                 <div className="flex gap-7">
                     <div className="min-w-60">
-                        <ImageUploadPreview label="Product Image" value={ImagePreview} onChange={
+                        <ImageUploadPreview label="Product Image" className="h-57" value={ImagePreview} onChange={
                             (file) => {
                                 setImageFile(file);
                                 setImagePreview(URL.createObjectURL(file));

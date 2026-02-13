@@ -7,6 +7,7 @@ type TImageUploadPreviewProps = {
     value?: string | null;
     onChange: (file: File) => void;
     className?: string;
+    height?: string;
 }
 
 const ImageUploadPreview = ({label, value, onChange, className}: TImageUploadPreviewProps) => {
@@ -25,7 +26,7 @@ const ImageUploadPreview = ({label, value, onChange, className}: TImageUploadPre
 
     return (
         <div className={className}>
-            <div onClick={handleImageClick} className="border-2 border-dashed border-primary bg-primary/5 rounded-lg h-50 flex flex-col justify-center items-center">
+            <div onClick={handleImageClick} className={`border-2 border-dashed border-primary bg-primary/5 rounded-lg flex flex-col justify-center items-center cursor-pointer ${className || 'h-50'}`}>
                 { 
                     value ? (
                         <Image src={value} alt="preview-product" width={190} height={190} className="w-full h-full object-cover"/>
