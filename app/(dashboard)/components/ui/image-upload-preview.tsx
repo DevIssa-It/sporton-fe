@@ -29,7 +29,7 @@ const ImageUploadPreview = ({label, value, onChange, className}: TImageUploadPre
             <div onClick={handleImageClick} className={`border-2 border-dashed border-primary bg-primary/5 rounded-lg flex flex-col justify-center items-center cursor-pointer ${className || 'h-50'}`}>
                 { 
                     value ? (
-                        <Image src={value} alt="preview-product" width={190} height={190} className="w-full h-full object-cover"/>
+                        <Image src={value} alt="preview-product" width={190} height={190} className="w-full h-full object-contain rounded-lg"/>
                     ) : (
                     <>
                         <FiUploadCloud size={24} className="text-primary"/>
