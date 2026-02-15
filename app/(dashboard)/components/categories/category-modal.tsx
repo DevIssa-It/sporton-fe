@@ -7,7 +7,6 @@ import ImageUploadPreview from "../ui/image-upload-preview";
 import React, { useEffect, useState } from "react";
 import { Category } from "@/app/types";
 import { getImageUrl } from "@/app/lib/api";
-import { Form } from "react-router-dom";
 import { createCategory, updateCategory } from "@/app/services/category.service";
 import { toast } from "react-toastify";
 
