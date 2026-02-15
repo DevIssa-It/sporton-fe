@@ -18,7 +18,7 @@ type TProductModalProps = {
     product?: Product | null;
 }
 
-type ProfuctFormData = {
+type ProductFormData = {
     name: string;
     price: number;
     stock: number;
