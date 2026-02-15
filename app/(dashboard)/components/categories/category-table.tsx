@@ -3,19 +3,6 @@ import { Category } from "@/app/types";
 import Image from "next/image";
 import { FiEdit2, FiTrash2 } from "react-icons/fi";
 
-const categoryData = [
-    {
-        name: "Running",
-        imageUrl: "/image/categories/category-running.svg",
-        description: "All Running Items, Shoes, Shirts"
-    },
-    {
-        name: "Football",
-        imageUrl: "/image/categories/category-football.svg",
-        description: "All Football Items, Shoes, Shirts"
-    }
-]
-
 type TCategoryTableProps = {
     categories: Category[],
     onEdit: (category: Category) => void,

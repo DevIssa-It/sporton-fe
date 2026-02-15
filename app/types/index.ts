@@ -46,12 +46,11 @@ export interface Transaction {
   _id: string,
   paymentProof: string,
   status: "pending" | "paid" | "rejected",
-  purchasedItems: [
+  purchasedItems:
     {
-      productId: string,
+      productId: Product,
       qty: number,
-    }
-  ],
+    }[],
   totalPayment: number,
   customerName: string,
   customerContact: string,
